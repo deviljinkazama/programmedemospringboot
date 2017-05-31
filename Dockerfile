@@ -5,4 +5,4 @@ RUN mkdir shardool
 RUN ls
 RUN echo Change@11-28PM
 RUN curl http://172.17.0.11/programme.jar -o /shardool/programme.jar
-CMD java -jar /shardool/programme.jar
+CMD java -jar /shardool/programme-${NUMBER}.jar

@@ -10,6 +10,33 @@
 	<url>https://www.mkyong.com</url>
 	<version>1.0</version>
 
+	<distributionManagement>
+    		<repository>
+      			<id>nexus</id>
+      			<name>Nexus Releases</name>
+      			<!--<url>http://172.17.0.9:8081/nexus/service/local/staging/deploy/maven2</url>-->
+      			<!--Changed as it was given different in the first video on the tutorial: http://www.sonatype.org/nexus/2015/12/03/using-jenkins-with-nexus-repository-manager-4-videos/
+         		and, also due to the following error
+		         [ERROR] Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy 
+         		(default-deploy) on project simple-project: Failed to deploy artifacts: Could not transfer 
+         		artifact org.sonatype.nexus.examples:simple-project:jar:1.0.0 from/to nexus 
+         		(http://172.17.0.9:8081/nexus/service/local/staging/deploy/maven2): Access denied to: 
+         		http://172.17.0.9:8081/nexus/service/local/staging/deploy/maven2/org/sonatype/nexus/examples/simple-project/1.0.0/simple-project-1.0.0.jar         
+         		ReasonPhrase: Forbidden. [Help 1]-->
+          		<url>http://172.17.0.9:8081/nexus/content/repositories/releases</url>
+    		</repository>
+	    	<snapshotRepository>
+	      		<id>nexus</id>
+	      		<name>Nexus Snapshot</name>
+	      		<url>http://172.17.0.9:8081/nexus/content/repositories/snapshots</url>
+	    	</snapshotRepository>
+	    	<site>
+	      		<id>nexus</id>
+	      		<name>Nexus Sites</name>
+	      		<url>dav:http://172.17.0.9:8081/nexus/content/sites/site/</url>
+	    	</site>
+  	</distributionManagement>
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

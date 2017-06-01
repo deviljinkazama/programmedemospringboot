@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:7
 EXPOSE 8080 8888
 RUN pwd
 RUN mkdir shardool
